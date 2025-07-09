@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// Mendefinisikan struktur data untuk Mahasiswa
 struct Mahasiswa
 {
     string nama;
@@ -11,5 +10,16 @@ struct Mahasiswa
 
 int main()
 {
-    // Fungsi main masih kosong, logika akan ditambahkan nanti
+    // membuat object struct dalam array
+    Mahasiswa mhs[4];
+    for (int i = 0; i < 4; i++)
+    {
+        cout << "Mahasiswa ke-" << i + 1 << endl;
+        cout << "Masukan nim = ";
+        cin >> mhs[i].nim;
+        cout << "Masukan nama = ";
+        cin >> mhs[i].nama;
+        cout << "Masukan alamat = ";
+        cin >> mhs[i].alamat;
+    }
 }

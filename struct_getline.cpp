@@ -1,30 +1,36 @@
 #include <iostream>
 using namespace std;
 
-// Mendefinisikan struct untuk alamat
-struct DetailAlamat {
+struct DetailAlamat 
+{
     string kota;
     string provinsi;
 };
 
-// Mendefinisikan struct utama yang berisi struct lain
-struct Mahasiswa {
+struct Mahasiswa 
+{
     string nama;
     string nim;
     DetailAlamat alamat; // Nested struct
 };
 
-int main() {
+int main() 
+{
+    // Membuat object struct dalam array
     Mahasiswa mhs[2];
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 2; i++) 
+    {
         cout << "Mahasiswa ke-" << i + 1 << endl;
         cout << "Masukan nim = ";
         cin >> mhs[i].nim;
-        // Input untuk nama akan ditambahkan nanti
+        cin.ignore();
+        cout << "Masukan nama = ";
+        getline(cin, mhs[i].nama); 
         cout << "Masukan kota = ";
         cin >> mhs[i].alamat.kota;
         cout << "Masukan provinsi = ";
         cin >> mhs[i].alamat.provinsi;
+        cin.ignore(); 
     }
-    return 0;
+    
 }
